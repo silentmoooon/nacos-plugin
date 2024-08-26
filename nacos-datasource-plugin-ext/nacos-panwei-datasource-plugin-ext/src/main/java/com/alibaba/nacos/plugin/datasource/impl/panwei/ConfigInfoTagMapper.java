@@ -17,6 +17,7 @@
 package com.alibaba.nacos.plugin.datasource.impl.panwei;
 
 import com.alibaba.nacos.plugin.datasource.constants.DatabaseTypeConstant;
+import com.alibaba.nacos.plugin.datasource.enums.TrustedPostgresFunctionEnum;
 import com.alibaba.nacos.plugin.datasource.impl.base.BaseConfigInfoTagMapper;
 
 /**
@@ -31,5 +32,9 @@ public class ConfigInfoTagMapper extends BaseConfigInfoTagMapper {
     public String getDataSource() {
         return DatabaseTypeConstant.PANWEI;
     }
-    
+
+    @Override
+    public String getFunction(String functionName) {
+        return TrustedPostgresFunctionEnum.getFunctionByName(functionName);
+    }
 }

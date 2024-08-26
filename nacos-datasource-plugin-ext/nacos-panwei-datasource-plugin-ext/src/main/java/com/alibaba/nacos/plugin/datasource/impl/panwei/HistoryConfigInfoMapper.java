@@ -19,6 +19,7 @@ package com.alibaba.nacos.plugin.datasource.impl.panwei;
 import com.alibaba.nacos.common.utils.CollectionUtils;
 import com.alibaba.nacos.plugin.datasource.constants.DatabaseTypeConstant;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
+import com.alibaba.nacos.plugin.datasource.enums.TrustedPostgresFunctionEnum;
 import com.alibaba.nacos.plugin.datasource.impl.mysql.HistoryConfigInfoMapperByMySql;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
@@ -42,5 +43,9 @@ public class HistoryConfigInfoMapper extends HistoryConfigInfoMapperByMySql {
     public String getDataSource() {
         return DatabaseTypeConstant.PANWEI;
     }
-    
+
+    @Override
+    public String getFunction(String functionName) {
+        return TrustedPostgresFunctionEnum.getFunctionByName(functionName);
+    }
 }
