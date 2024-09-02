@@ -33,5 +33,6 @@ public class DatabaseTypeConstant {
     public static final String DM = "dm";
 
     public static final String PANWEI = "panwei";
+
     public static final String SQLSERVER = "sqlserver";
 }
